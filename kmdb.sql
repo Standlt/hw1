@@ -68,15 +68,31 @@ create table actors (
     last_name text
 );
 
--- - Insertion of "Batman" sample data into tables.
+insert into studios (studio_name)
+values ("Warner Bros"),
+("Disney"),
+("20 Century Fox");
 
-insert into studios (
-  studio_name,
-  values,
-  "Warner Bros",
-  "Paramount,
-  "Disney"
-);
+select * from studios;
+
+-- Insert actor names into the actors table
+INSERT INTO actors (first_name, last_name)
+VALUES 
+  ('Christian', 'Bale'),
+  ('Michael', 'Caine'),
+  ('Liam', 'Neeson'),
+  ('Katie', 'Holmes'),
+  ('Gary', 'Oldman'),
+  ('Heath', 'Ledger'),
+  ('Aaron', 'Eckhart'),
+  ('Maggie', 'Gyllenhaal'),
+  ('Tom', 'Hardy'),
+  ('Joseph', 'Gordon-Levitt'),
+  ('Anne', 'Hathaway');
+
+  select * from actors;
+
+-- - Insertion of "Batman" sample data into tables.
 -- - Selection of data, so that something similar to the sample "report"
 --   below can be achieved.
 -- Rubric
