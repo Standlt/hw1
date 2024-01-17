@@ -92,6 +92,13 @@ VALUES
 
   select * from actors;
 
+insert into movies (title, release_year, MPAA_rating, studio_id)
+values ('Batman Begins', '2005', 'PG-13', (SELECT id FROM studios WHERE studio_name = 'Warner Bros')),
+('The Dark Knight', '2008', 'PG-13', (SELECT id FROM studios WHERE studio_name = 'Warner Bros')),
+('The Dark Knight Rises', '2012', 'PG-13', (SELECT id FROM studios WHERE studio_name = 'Warner Bros'));
+
+select * from movies;
+
 -- - Insertion of "Batman" sample data into tables.
 -- - Selection of data, so that something similar to the sample "report"
 --   below can be achieved.
