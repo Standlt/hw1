@@ -16,13 +16,13 @@
 
 -- User stories
 --
--- - As a guest, I want to see a list of movies with the title, year released,
+-- - As a guest, I want to see a list of movies with the title, year released, CHECK
 --   MPAA rating, and studio information.
--- - As a guest, I want to see the movies which a single studio has produced.
--- - As a guest, I want to see each movie's cast including each actor's
+-- - As a guest, I want to see the movies which a single studio has produced.  CHECK   (Filter Movie Table for Studio)
+-- - As a guest, I want to see each movie's cast including each actor's        CHECK   (Filter Roles Table by Movie)
 --   name and the name of the character they portray.
--- - As a guest, I want to see the movies which a single actor has acted in.
--- * Note: The "guest" user role represents the experience prior to logging-in
+-- - As a guest, I want to see the movies which a single actor has acted in.   CHECK    (Filter Roles Table by Actor)
+-- * Note: The "guest" user role represents the experience prior to logging-in      
 --   to an app and typically does not have a corresponding database table.
 
 
@@ -33,10 +33,52 @@
 -- - A domain model, implemented via CREATE TABLE statements for each
 --   model/table. Also, include DROP TABLE IF EXISTS statements for each
 --   table, so that each run of this script starts with a blank database.
+
+.mode column
+.headers off
+
+Drop table if exists movies;
+Drop table if exists actors;
+Drop table if exists studios;
+drop table if exists roles;
+
+create table movies (
+    id integer primary key autoincrement,
+    title text,
+    release_year text,
+    MPAA_rating text,
+    studio_id integer
+);
+
+create table studios (
+    id integer primary key autoincrement,
+    studio_name text
+    );
+
+create table roles (
+    id integer primary key autoincrement,
+    character_name text,
+    movie_id integer,
+    actor_id integer
+);
+
+create table actors (
+    id integer primary key autoincrement,
+    first_name text,
+    last_name text
+);
+
 -- - Insertion of "Batman" sample data into tables.
+
+insert into studios (
+  studio_name,
+  values,
+  "Warner Bros",
+  "Paramount,
+  "Disney"
+);
 -- - Selection of data, so that something similar to the sample "report"
 --   below can be achieved.
-
 -- Rubric
 --
 -- 1. Domain model - 6 points
@@ -100,8 +142,8 @@
 -- The Dark Knight Rises  Anne Hathaway         Selina Kyle
 
 -- Turns column mode on but headers off
-.mode column
-.headers off
+--.mode column
+--.headers off
 
 -- Drop existing tables, so you'll start fresh each time this script is run.
 -- TODO!
@@ -114,18 +156,18 @@
 -- TODO!
 
 -- Prints a header for the movies output
-.print "Movies"
-.print "======"
-.print ""
+--.print "Movies"
+--.print "======"
+--.print ""
 
 -- The SQL statement for the movies output
 -- TODO!
 
 -- Prints a header for the cast output
-.print ""
-.print "Top Cast"
-.print "========"
-.print ""
+--.print ""
+--.print "Top Cast"
+--.print "========"
+--.print ""
 
 
 -- The SQL statement for the cast output
