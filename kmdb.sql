@@ -117,7 +117,7 @@ values
   ('Selina Kyle', (SELECT id FROM movies WHERE title = 'The Dark Knight Rises'), (SELECT id FROM actors WHERE first_name = 'Anne' AND last_name = 'Hathaway')),
   ('Ra''s Al Ghul', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Liam' AND last_name = 'Neeson'));
 
-  select * from roles
+ -- select * from roles
   
 -- - Insertion of "Batman" sample data into tables.
 -- - Selection of data, so that something similar to the sample "report"
@@ -158,6 +158,9 @@ values
 
 -- Successful sample output is as shown:
 
+.print "Movies"
+.print "======"
+.print ""
 select movies.title, movies.release_year, movies.MPAA_rating, studios.studio_name from movies
 inner join studios on movies.studio_id = studios.id; 
 
@@ -168,9 +171,13 @@ inner join studios on movies.studio_id = studios.id;
 -- The Dark Knight        2008           PG-13  Warner Bros.
 -- The Dark Knight Rises  2012           PG-13  Warner Bros.
 
-select movies.title, actors.first_name, actors.last_name, roles.character_name, from roles
+.print "Top Cast"
+.print "======"
+.print ""
+select movies.title, actors.first_name, actors.last_name, roles.character_name from roles
 inner join movies on roles.movie_id = movies.id
-inner join actors on roles.actor_id = actors.id;
+inner join actors on roles.actor_id = actors.id
+order by movies.title;
 
 -- Top Cast
 -- ========
