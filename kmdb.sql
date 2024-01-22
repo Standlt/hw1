@@ -103,7 +103,6 @@ insert into roles (character_name, movie_id, actor_id)
 values  
   ('Bruce Wayne', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Christian' AND last_name = 'Bale')),
   ('Alfred', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Michael' AND last_name = 'Caine')),
-  ('Ra\'s Al Ghul', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Liam' AND last_name = 'Neeson')),
   ('Rachel Dawes', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Katie' AND last_name = 'Holmes')),
   ('Commissioner Gordon', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Gary' AND last_name = 'Oldman')),
   ('Bruce Wayne', (SELECT id FROM movies WHERE title = 'The Dark Knight'), (SELECT id FROM actors WHERE first_name = 'Christian' AND last_name = 'Bale')),
@@ -115,7 +114,10 @@ values
   ('Commissioner Gordon', (SELECT id FROM movies WHERE title = 'The Dark Knight Rises'), (SELECT id FROM actors WHERE first_name = 'Gary' AND last_name = 'Oldman')),
   ('Bane', (SELECT id FROM movies WHERE title = 'The Dark Knight Rises'), (SELECT id FROM actors WHERE first_name = 'Tom' AND last_name = 'Hardy')),
   ('John Blake', (SELECT id FROM movies WHERE title = 'The Dark Knight Rises'), (SELECT id FROM actors WHERE first_name = 'Joseph'AND last_name = 'Gordon-Levitt')),
-  ('Selina Kyle', (SELECT id FROM movies WHERE title = 'The Dark Knight Rises'), (SELECT id FROM actors WHERE first_name = 'Anne' AND last_name = 'Hathaway'));
+  ('Selina Kyle', (SELECT id FROM movies WHERE title = 'The Dark Knight Rises'), (SELECT id FROM actors WHERE first_name = 'Anne' AND last_name = 'Hathaway')),
+  ('Ra''s Al Ghul', (SELECT id FROM movies WHERE title = 'Batman Begins'), (SELECT id FROM actors WHERE first_name = 'Liam' AND last_name = 'Neeson'));
+
+  select * from roles
   
 -- - Insertion of "Batman" sample data into tables.
 -- - Selection of data, so that something similar to the sample "report"
