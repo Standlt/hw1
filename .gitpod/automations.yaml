@@ -1,0 +1,11 @@
+# .gitpod.yml
+tasks:
+  - init: |
+      # Install Ruby dependencies
+      bundle install
+      # Run the automation script
+      ./gitpod/automations/init.sh
+
+  - command: |
+      # Start the Ruby application
+      ruby your_file.rb
