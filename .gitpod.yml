@@ -1,0 +1,14 @@
+# .gitpod.yml
+
+tasks:
+  - init: |
+      # Install Ruby dependencies
+      bundle install
+      
+      # Optional: Precompile assets if you’re using Rails or another framework
+      # bundle exec rake assets:precompile  # Uncomment if needed
+
+  - command: |
+      # Start your Ruby server or application
+      # If using Rails, start with `rails server`
+      ruby your_file.rb   # Replace with your main Ruby file or server command
